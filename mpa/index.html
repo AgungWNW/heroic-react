@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>MPA Demo - Home</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🏠 Multi-Page Application Demo</h1>
+        <p class="subtitle">
+          Traditional Website - Full Page Reload on Navigation
+        </p>
+      </header>
+
+      <nav class="navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <main>
+        <div class="reload-indicator" id="reloadIndicator">
+          ⚡ Page loaded at: <span id="loadTime"></span>
+        </div>
+
+        <div class="content-card">
+          <h2>Welcome to the Home Page</h2>
+          <p>
+            This is a traditional Multi-Page Application (MPA). Every
+            time you click a navigation link:
+          </p>
+
+          <ul class="feature-list">
+            <li>
+              🔄 <strong>Full page reload</strong> - The entire HTML,
+              CSS, and JavaScript are downloaded again
+            </li>
+            <li>
+              ⏱️ <strong>State is lost</strong> - Any data or form
+              inputs are reset
+            </li>
+            <li>
+              🌐 <strong>Server request</strong> - A new HTTP request
+              is made to the server
+            </li>
+            <li>
+              📄 <strong>New HTML document</strong> - The browser
+              receives a completely new page
+            </li>
+          </ul>
+
+          <div class="demo-section">
+            <h3>Try This Demo:</h3>
+            <p>1. Note the timestamp above (when this page loaded)</p>
+            <p>2. Type something in this input:</p>
+            <input
+              type="text"
+              placeholder="Type anything here..."
+              class="demo-input"
+            />
+            <p>3. Click any navigation link above</p>
+            <p>4. Notice how:</p>
+            <ul>
+              <li>The page flashes/blinks (full reload)</li>
+              <li>The timestamp changes (new page load)</li>
+              <li>Your input is cleared (state is lost)</li>
+              <li>The browser loading indicator shows</li>
+            </ul>
+          </div>
+
+          <div class="info-box">
+            <h3>⚠️ Disadvantages of MPA:</h3>
+            <ul>
+              <li>Slower user experience (full page reloads)</li>
+              <li>
+                Network overhead (downloading same resources
+                repeatedly)
+              </li>
+              <li>Flash/blink between page transitions</li>
+              <li>
+                State management is complex (requires
+                cookies/localStorage)
+              </li>
+              <li>Less interactive feel</li>
+            </ul>
+          </div>
+
+          <div class="info-box success">
+            <h3>✅ This is where React shines!</h3>
+            <p>React creates Single Page Applications (SPA) that:</p>
+            <ul>
+              <li>Only update the parts of the page that change</li>
+              <li>Keep state in memory without page reloads</li>
+              <li>Provide smooth, app-like navigation</li>
+              <li>
+                Load data in the background without full refreshes
+              </li>
+            </ul>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>
+          👉 Click the navigation links above to see the page reload
+          effect
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      // Display current load time
+      document.getElementById('loadTime').textContent =
+        new Date().toLocaleTimeString();
+
+      // Add flash effect to show page reload
+      document
+        .getElementById('reloadIndicator')
+        .classList.add('flash');
+
+      // Log page load for demonstration
+      console.log(
+        '🔄 Page fully reloaded at:',
+        new Date().toLocaleTimeString(),
+      );
+      console.log('📍 Current page: index.html');
+    </script>
+  </body>
+</html>

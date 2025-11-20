@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>MPA Demo - Contact</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>📧 Multi-Page Application Demo</h1>
+        <p class="subtitle">
+          Traditional Website - Full Page Reload on Navigation
+        </p>
+      </header>
+
+      <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+
+      <main>
+        <div class="reload-indicator" id="reloadIndicator">
+          ⚡ Page loaded at: <span id="loadTime"></span>
+        </div>
+
+        <div class="content-card">
+          <h2>Contact Form Demo</h2>
+
+          <div class="demo-section">
+            <h3>Try This: Fill Out the Form</h3>
+            <p>
+              Type some information, then click a navigation link:
+            </p>
+
+            <form class="contact-form">
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Enter your name"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Enter your email"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea
+                  id="message"
+                  rows="4"
+                  placeholder="Type your message..."
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label>
+                  <input type="checkbox" id="subscribe" />
+                  Subscribe to newsletter
+                </label>
+              </div>
+            </form>
+
+            <div class="warning-box">
+              <p>
+                <strong>⚠️ Warning:</strong> If you fill out this form
+                and navigate away, all your input will be lost!
+              </p>
+              <p>This is a major problem in traditional MPAs.</p>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <h3>Problems with MPA Forms:</h3>
+            <ul>
+              <li>
+                ❌ <strong>Lost data:</strong> Navigate away and all
+                form input is gone
+              </li>
+              <li>
+                ❌ <strong>Frustrating UX:</strong> Users have to
+                re-enter everything
+              </li>
+              <li>
+                ❌ <strong>No auto-save:</strong> Can't easily
+                preserve draft data
+              </li>
+              <li>
+                ❌ <strong>Validation complexity:</strong> Server-side
+                validation requires full page reload
+              </li>
+            </ul>
+          </div>
+
+          <div class="info-box success">
+            <h3>✅ React SPA Solutions:</h3>
+            <ul>
+              <li>State management keeps form data in memory</li>
+              <li>Navigate between pages without losing data</li>
+              <li>
+                Instant client-side validation without page reload
+              </li>
+              <li>Easy auto-save to localStorage or backend</li>
+              <li>Better error handling and user feedback</li>
+            </ul>
+          </div>
+
+          <div class="summary-section">
+            <h3>🎯 Key Takeaways:</h3>
+            <div class="takeaway-grid">
+              <div class="takeaway-card">
+                <h4>MPA (What we're seeing)</h4>
+                <ul>
+                  <li>Full page reload on every navigation</li>
+                  <li>All state is lost</li>
+                  <li>Visible flash/blink</li>
+                  <li>Multiple HTTP requests</li>
+                  <li>Slower, less smooth experience</li>
+                </ul>
+              </div>
+              <div class="takeaway-card highlight">
+                <h4>SPA with React (What we'll build)</h4>
+                <ul>
+                  <li>Only update what changes</li>
+                  <li>State persists in memory</li>
+                  <li>Smooth, instant transitions</li>
+                  <li>Single page, dynamic content</li>
+                  <li>Fast, app-like experience</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>
+          🎓 Now you understand why React and SPAs are so powerful!
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById('loadTime').textContent =
+        new Date().toLocaleTimeString();
+      document
+        .getElementById('reloadIndicator')
+        .classList.add('flash');
+      console.log(
+        '🔄 Page fully reloaded at:',
+        new Date().toLocaleTimeString(),
+      );
+      console.log('📍 Current page: contact.html');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>MPA Demo - Products</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🛍️ Multi-Page Application Demo</h1>
+        <p class="subtitle">
+          Traditional Website - Full Page Reload on Navigation
+        </p>
+      </header>
+
+      <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <main>
+        <div class="reload-indicator" id="reloadIndicator">
+          ⚡ Page loaded at: <span id="loadTime"></span>
+        </div>
+
+        <div class="content-card">
+          <h2>Products Page</h2>
+
+          <div class="demo-section">
+            <h3>Interactive Demo: Count the Reloads</h3>
+            <p>
+              Each time you navigate, the counter below resets to 0:
+            </p>
+            <div class="counter-demo">
+              <button onclick="increment()" class="counter-button">
+                Click Me!
+              </button>
+              <p class="counter-display">
+                Count: <span id="counter">0</span>
+              </p>
+              <p class="hint">
+                Try clicking the button, then navigate to another page
+                and come back. The count will reset!
+              </p>
+            </div>
+          </div>
+
+          <div class="products-grid">
+            <div class="product-card">
+              <h3>Product 1</h3>
+              <p>$29.99</p>
+              <p class="product-desc">
+                Every click on these products would reload the entire
+                page in a traditional MPA.
+              </p>
+            </div>
+            <div class="product-card">
+              <h3>Product 2</h3>
+              <p>$39.99</p>
+              <p class="product-desc">
+                In React, clicking would only update the necessary
+                components!
+              </p>
+            </div>
+            <div class="product-card">
+              <h3>Product 3</h3>
+              <p>$49.99</p>
+              <p class="product-desc">
+                No page reload, no flash, no lost state!
+              </p>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <h3>🔍 What You're Experiencing:</h3>
+            <ul>
+              <li>
+                <strong>Full page reload:</strong> Every navigation
+                destroys and recreates the entire page
+              </li>
+              <li>
+                <strong>Lost JavaScript state:</strong> The counter
+                resets every time
+              </li>
+              <li>
+                <strong>Network overhead:</strong> Styles, scripts,
+                and HTML are re-downloaded
+              </li>
+              <li>
+                <strong>Poor UX:</strong> The flash and loading delay
+                break the user flow
+              </li>
+            </ul>
+          </div>
+
+          <div class="info-box success">
+            <h3>⚡ In a React SPA:</h3>
+            <ul>
+              <li>
+                The counter would <strong>persist</strong> across
+                navigation
+              </li>
+              <li>
+                Only the content area would <strong>update</strong>
+              </li>
+              <li>
+                Navigation would be <strong>instant</strong> and
+                smooth
+              </li>
+              <li>No flash, no reload, just seamless transitions</li>
+            </ul>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>
+          👉 Try clicking the counter button, then navigate away and
+          back
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      let count = 0;
+
+      function increment() {
+        count++;
+        document.getElementById('counter').textContent = count;
+      }
+
+      document.getElementById('loadTime').textContent =
+        new Date().toLocaleTimeString();
+      document
+        .getElementById('reloadIndicator')
+        .classList.add('flash');
+      console.log(
+        '🔄 Page fully reloaded at:',
+        new Date().toLocaleTimeString(),
+      );
+      console.log('📍 Current page: products.html');
+      console.log('🔢 Counter reset to:', count);
+    </script>
+  </body>
+</html>
