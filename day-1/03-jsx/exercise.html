@@ -43,35 +43,35 @@
       const rootElement = document.getElementById('root');
 
       // This is the old way with React.createElement:
-      const element = React.createElement(
-        'div',
-        {
-          className: 'container',
-          style: {
-            padding: '40px',
-            backgroundColor: 'rgba(255, 255, 255, 0.1)',
-            borderRadius: '16px',
-            textAlign: 'center',
-            maxWidth: '600px',
-            margin: '50px auto',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
-            backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-          },
-        },
-        React.createElement(
-          'h1',
-          {
-            style: { color: 'white', fontSize: '48px', margin: '0' },
-          },
-          'Hello World',
-        ),
-        React.createElement(
-          'p',
-          { style: { color: 'white', fontSize: '24px' } },
-          'Welcome to React!',
-        ),
-      );
+      //const element = React.createElement(
+        //'div',
+        //{
+          //className: 'container',
+          //style: {
+            //padding: '40px',
+            //backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            //borderRadius: '16px',
+            //textAlign: 'center',
+            //maxWidth: '600px',
+            //margin: '50px auto',
+            //boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
+            //backdropFilter: 'blur(10px)',
+            //border: '1px solid rgba(255, 255, 255, 0.2)',
+          //},
+        //},
+        //React.createElement(
+          //'h1',
+          //{
+            //style: { color: 'white', fontSize: '48px', margin: '0' },
+          //},
+          //'Hello World',
+        //),
+        //React.createElement(
+          //'p',
+          //{ style: { color: 'white', fontSize: '24px' } },
+          //'Welcome to React!',
+        //),
+      //);
 
       // STEP 2: Convert the above to JSX
       // JSX looks like HTML but with some differences:
@@ -89,6 +89,13 @@
       // );
       //
       // JSX Guide: https://react.dev/learn/writing-markup-with-jsx
+      const nama = 'Agung';
+      const element = (
+        <div className="container" style={{color: 'lightblue',fontSize: '50px',padding: '30px'}}>
+          <h1 style={{color: 'orange',fontSize: '30px'}}>Hello {nama} Waktu Menunjukkan Pukul {new Date().toLocaleTimeString()}</h1>
+          <p style={{color: 'yellow',fontSize: '15px'}}>Welcome to React Part {1 + 1} !</p>
+        </div>
+      );
 
       // STEP 3: Use JavaScript expressions in JSX
       // Create a variable and use it in your JSX with curly braces { }
