@@ -37,6 +37,8 @@
       // Use document.getElementById() to get the element with id "root"
       // Store it in a variable called rootElement
 
+      const element = document.getElementById("root")
+
       // STEP 2: Create a React element using React.createElement
       // API: React.createElement(type, props, ...children)
       // - type: string like 'div', 'h1', 'p', or a component
@@ -46,6 +48,50 @@
       // Example structure:
       // React.createElement('tagName', { /* props object */ }, 'child content')
       //
+
+      const heading = React.createElement(
+        'h1',
+        {
+          style: {
+            color: 'lightblue',
+            fontSize: '64px',
+            margin: '0',
+            fontWeight: 'italic',
+          },
+        },
+        'SELAMAT PAGI',
+      );
+
+      const paragraph = React.createElement(
+        'p',
+        {
+          style: {
+            color: 'yellow',
+            fontSize: '32px',
+            margin: '0',
+            fontWeight: 'bold',
+          },
+        },
+        'DUNIAAA!!!',
+      );
+
+      const button = React.createElement(
+        'button',
+        {
+          onClick: () => alert('TERIMAKASIH BANYAK'),
+          style: {
+            padding: '10px 15px',
+            fontSize: '20px',
+            backgroundColor: 'red',
+            color: 'white',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+            marginTop: '30px',
+          },
+        },
+        'Klik Aku!!',
+      );
+
       // Create a div with:
       // - className: 'container'
       // - style object with: padding, backgroundColor, borderRadius, textAlign, etc.
@@ -53,13 +99,35 @@
       //
       // React Docs: https://react.dev/reference/react/createElement
 
+      const container = React.createElement(
+        'div',
+        {
+          className: 'container',
+          style: {
+            padding: '30px',
+            backgroundColor: 'rgba(80, 253, 132, 0.3)',
+            borderRadius: '12px',
+            textAlign: 'center',
+            maxWidth: '500px',
+            margin: '30px',
+          },
+        },
+        heading,
+        paragraph,
+        button,
+      );
+
       // STEP 3: Create a React root
       // Use ReactDOM.createRoot() passing in your rootElement
       // Store the result in a variable called root
       // Docs: https://react.dev/reference/react-dom/client/createRoot
 
+      const root = ReactDOM.createRoot(element);
+
       // STEP 4: Render your React element
       // Call root.render() passing in your element
+
+      root.render(container);
 
       // BONUS CHALLENGE 1: Create nested elements
       // Make your div contain both an h1 and a p element
