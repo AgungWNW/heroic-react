@@ -15,6 +15,7 @@
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         min-height: 100vh;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
       }
@@ -95,10 +96,13 @@
         button.textContent = 'Click Me!!!';
       });
       button.addEventListener('mouseleave', () => {
+        judul.textContent = "Exercise 1";
+        prgh1.textContent = 'DOM Exercise';
         button.textContent = 'LOOK AT MEEEEE!!!';
       });
       button.addEventListener('click', () => {
-        button.textContent = 'Thank You:)';
+        judul.textContent = "YOU ARE THE BEST";
+        button.textContent = 'THANK YOU!!!!';
       });
       document.body.appendChild(button);
     </script>
