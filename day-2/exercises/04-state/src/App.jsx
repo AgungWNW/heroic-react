@@ -1,11 +1,7 @@
 import { useState } from 'react';
 
-// EXERCISE 1: Simple Counter Component
 function Counter() {
   const [count, setCount] = useState(0);
-  // TODO: Create state for count
-  // Hint: const [count, setCount] = useState(0)
-
   const buttonStyle = {
     padding: '10px 20px',
     margin: '5px',
@@ -49,16 +45,10 @@ function Counter() {
       <button style={buttonStyle} onClick={() => setCount(0)}>
         -Reset-
       </button>
-      {/* TODO: Add three buttons */}
-      {/* 1. Increment button that increases count by 1 */}
-      {/* 2. Decrement button that decreases count by 1 */}
-      {/* 3. Reset button that sets count to 0 */}
-      {/* Hint: onClick={() => setCount(count + 1)} */}
     </div>
   );
 }
 
-// Badge component
 function Badge({ text, color = '#667eea' }) {
   return (
     <span
@@ -78,7 +68,6 @@ function Badge({ text, color = '#667eea' }) {
   );
 }
 
-// HeroCard component
 function HoloCard({
   id,
   name,
@@ -155,10 +144,6 @@ function HoloCard({
       </p>
 
       <div style={{ marginTop: '15px' }}>
-        {/* TODO: Wire up the favorite button */}
-        {/* Hint: Change background color based on isFavorite */}
-        {/* Hint: Change text based on isFavorite */}
-        {/* Hint: Call onToggleFavorite(id) when clicked */}
         <button
           style={buttonStyle}
           onClick={() => onToggleFavorite(id)}
@@ -233,13 +218,6 @@ function App() {
   const filteredHoloMember = holoMember.filter((Vtuber) =>
     Vtuber.name.toLowerCase().includes(searchTerm.toLowerCase()),
   );
-  // TODO: Create toggleFavorite function
-  // This function should:
-  // 1. Check if the heroId is in favorites array
-  // 2. If yes, remove it using filter
-  // 3. If no, add it using spread operator
-  // Hint: favorites.includes(heroId)
-  // Hint: setFavorites([...favorites, heroId])
   const toggleFavorite = (holoId) => {
     if (favorites.includes(holoId)) {
       setFavorites(favorites.filter((id) => id !== holoId));
@@ -274,9 +252,6 @@ function App() {
       >
         Hololive Gallery 
       </h1>
-
-      {/* TODO: Show favorites count */}
-      {/* Hint: favorites.length */}
       <p
         style={{
           color: 'white',
@@ -288,12 +263,8 @@ function App() {
         Favorites: {favorites.length}
       </p>
 
-      {/* EXERCISE 1: Counter Component */}
       <Counter />
 
-      {/* TODO: EXERCISE 2 - Add search input */}
-      {/* Hint: Controlled input with value={searchTerm} */}
-      {/* Hint: onChange={(e) => setSearchTerm(e.target.value)} */}
       <input
         type="text"
         placeholder="Search Vtubers..."
@@ -325,8 +296,6 @@ function App() {
           gap: '24px',
         }}
       >
-        {/* TODO: Map over filteredHeroes */}
-        {/* TODO: Pass isFavorite and onToggleFavorite props */}
         {filteredHoloMember.map((Vtuber) => (
           <HoloCard key={Vtuber.id} {...Vtuber}
           isFavorite={favorites.includes(Vtuber.id)}
