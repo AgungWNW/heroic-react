@@ -1,9 +1,5 @@
 import React from 'react';
 
-// Starter: data fetching exercise
-// This file provides a ProductCard component and an empty App.
-// Your task: fetch products from https://dummyjson.com/products?limit=12 and display them.
-
 function ProductCard({ product }) {
   return (
     <div className="card" style={{ textAlign: 'left' }}>
@@ -35,10 +31,6 @@ function ProductCard({ product }) {
 }
 
 export default function App() {
-  // TODO: Create state for products, loading, and error.
-  // TODO: Use useEffect to fetch data from 'https://dummyjson.com/products?limit=12'
-  // TODO: Handle loading state and error state.
-  // TODO: Display the products in a grid below.
   const [products, setProducts] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
@@ -138,10 +130,6 @@ export default function App() {
         Product Showcase
       </h1>
 
-      {/* TODO: Show loading spinner */}
-      {/* TODO: Show error if any */}
-      {/* TODO: Display products in a grid using ProductCard */}
-
       <div
         style={{
           display: 'grid',
@@ -153,7 +141,6 @@ export default function App() {
         { products.map((product) => (
           <ProductCard key={product.id} product={product} />
         )) }
-        {/* Render product cards here */}
       </div>
     </div>
   );
