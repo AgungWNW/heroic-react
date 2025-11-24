@@ -1,8 +1,5 @@
 import React from 'react';
 
-// Starter: useEffect exercise
-// This file intentionally provides conceptual hints instead of full copyable solutions.
-
 const mockHeroes = [
   { id: 1, name: 'Iron Man', team: 'Avengers' },
   { id: 2, name: 'Spider-Man', team: 'Avengers' },
@@ -29,8 +26,6 @@ function time() {
 function TitleUpdater() {
   const [count, setCount] = React.useState(0);
 
-  // TODO: Use useEffect to update document.title when `count` changes.
-  // Hint: React.useEffect(() => { document.title = `Count: ${count}` }, [count])
   return (
     <div className="card">
       <h2>Title Updater</h2>
@@ -67,9 +62,6 @@ function Timer() {
     };
   }, [isRunning]);
 
-  // TODO: Use useEffect to start an interval that increments seconds every 1000ms
-  // Remember to return a cleanup function to clearInterval.
-
   return (
     <div className="card">
       <h2>Timer</h2>
@@ -86,8 +78,6 @@ function Timer() {
   );
 }
 
-  // TODO: Use useEffect to simulate fetching heroes (setTimeout) and update state.
-  // Show loading while fetching and render the hero list when done.
 function HeroLoader() {
   const [heroes, setHeroes] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
