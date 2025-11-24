@@ -22,52 +22,17 @@
     </style>
   </head>
   <body>
-    <!-- Your JavaScript will add content here -->
-
     <script>
-      // EXERCISE: Build a "Hello World" using vanilla JavaScript DOM manipulation
-
-      // STEP 1: Create a div element
-      // MDN Reference: https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
-      // The createElement method takes a tag name as a string parameter
-
       const judul = document.createElement("div");
-
-      // STEP 2: Set the text content
-      // You can use either .textContent or .innerHTML property
-      // Set it to "Hello World"
-
       judul.textContent = "Exercise 1";
-
-      // STEP 3: Add a CSS class
-      // Use the .className property to add "container" class
-
       judul.className = "container";
-
-      // STEP 4: Add inline styles using the .style property
-      // You'll need to set multiple style properties:
-      // - color (try 'white')
-      // - fontSize (try '48px')
-      // - padding (try '40px')
-      // - backgroundColor (try 'rgba(255, 255, 255, 0.1)')
-      // - borderRadius (try '16px')
-      // - textAlign (try 'center')
-      // Note: CSS properties in JS use camelCase (background-color → backgroundColor)
-
       judul.style.color = "green";
       judul.style.fontsize = '70px';
       judul.style.padding = '65px';
       judul.style.backgroundColor = 'rgba(80, 253, 132, 0.3)';
       judul.style.borderRadius = '32px';
       judul.textalign = 'center';
-
-      // STEP 5: Append to the DOM
-      // Use document.body.appendChild() to add your element to the page
-
       document.body.appendChild(judul);
-
-      // BONUS CHALLENGE 1: Create a second element (like a paragraph) with your name
-      // Follow the same steps as above but use 'p' tag instead of 'div'
 
       const prgh1 = document.createElement("p");
       prgh1.textContent = 'DOM Exercise';
@@ -75,14 +40,7 @@
       prgh1.style.fontsize = '55px';
       prgh1.style.padding = '40px';
       
-
       document.body.appendChild(prgh1);
-
-      // BONUS CHALLENGE 2: Add a button that changes the text when clicked
-      // 1. Create a button element
-      // 2. Set its text to "Click Me"
-      // 3. Add an event listener: button.addEventListener('click', function() { ... })
-      // 4. Inside the function, change the div's textContent to something new
 
       const button = document.createElement('button');
       button.textContent = 'Look At Me!!!';
