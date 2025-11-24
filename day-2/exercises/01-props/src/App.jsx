@@ -1,17 +1,3 @@
-// TODO: Create a HeroCard component that accepts props
-// The component should receive: name, power, image, and realName (optional)
-// Hint: You can destructure props in the function parameters
-// Hint: For conditional rendering of realName, use the && operator
-
-// Example component structure:
-// function HeroCard(props) {
-//   // Your component code here
-//   return (
-//     <div>
-//       {/* Your JSX here */}
-//     </div>
-//   )
-// }
 function HoloCard({  name,
   power,
   country,
@@ -68,9 +54,6 @@ function HoloCard({  name,
     </div>
   );
 }
-// BONUS TODO: Create a Badge component
-// It should accept: text and color (with a default value)
-// Hint: Use default parameters like: function Badge({ text, color = '#667eea' })
 
 function Badge({ text, color = '#667eea' }) {
   const badgeStyle = {
